@@ -40,10 +40,10 @@ app.post('/api/authenticate', async (req, res) => {
     const { code } = req.body;
 
     try {
-        //for debug
-        //const authCode = await AuthCode.findOne({ where: { code } });
+        // One code can be used multiple times.
+        const authCode = await AuthCode.findOne({ where: { code } });
 
-        const authCode = await AuthCode.findOne({ where: { code, used: false } });
+        // const authCode = await AuthCode.findOne({ where: { code, used: false } });
         console.log(authCode)
 
         if (authCode) {

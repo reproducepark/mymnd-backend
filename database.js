@@ -3,7 +3,7 @@ const { DataTypes, Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: 'database.sqlite',
+    storage: './database/database.sqlite',
 });
 
 // Define the AuthCode model
@@ -30,6 +30,7 @@ const AuthCode = sequelize.define(
         }
     },
     {
+        tableName: 'AuthCodes',
         timestamps: false, // Disable automatic timestamp fields like `createdAt` and `updatedAt`
     }
 );

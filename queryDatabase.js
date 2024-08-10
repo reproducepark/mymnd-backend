@@ -1,4 +1,4 @@
-const { AuthCode } = require('../database');
+const { sequelize, AuthCode } = require('./database');
 
 const queryDatabase = async () => {
     try {

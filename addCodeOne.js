@@ -1,5 +1,5 @@
 const readline = require('readline');
-const { sequelize, AuthCode } = require('../database');
+const { sequelize, AuthCode } = require('./database');
 
 // Create an interface for reading input from the console
 const rl = readline.createInterface({

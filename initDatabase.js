@@ -6,7 +6,7 @@ const initializeDatabase = async () => {
         
         // Insert initial data with new fields
         await AuthCode.create({
-            code: '123456',
+            code: process.env.INITIAL_CODE || '123456',
             used: false,
             used_date: null, // Set as null initially
             created_date: new Date() // Set current date and time

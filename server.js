@@ -9,7 +9,7 @@ const { sequelize, AuthCode } = require('./database');
 
 require("dotenv").config();
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || "yourjwtsecret";
 
 const app = express();
 app.use(bodyParser.json());

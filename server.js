@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { sequelize, AuthCode } = require('./database');
+const { initializeDatabase } = require('./initDatabase');
 
 require("dotenv").config();
 
@@ -82,6 +83,7 @@ const PORT = process.env.PORT || 3000;
 
 async function startServer() {
     try {
+        await initializeDatabase();
         await sequelize.sync().then(() => {
             console.log('Database synchronized');
         });
